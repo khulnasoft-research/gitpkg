@@ -1,5 +1,16 @@
 {
   "version": "independent",
-  "npmClient": "yarn",
-  "useWorkspaces": true
+  "npmClient": "npm",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": "main"
+    },
+    "publish": {
+      "ignoreChanges": [
+        "**/*.md",
+        ".gitignore"
+      ]
+    }
+  }
 }
