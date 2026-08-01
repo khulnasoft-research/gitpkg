@@ -1,7 +1,6 @@
 {
   "version": "independent",
-  "npmClient": "npm",
-  "useWorkspaces": true,
+  "npmClient": "pnpm",
   "command": {
     "version": {
       "allowBranch": "main"

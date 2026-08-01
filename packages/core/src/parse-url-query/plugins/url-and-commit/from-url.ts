@@ -11,13 +11,14 @@ const matchFromUrl = match<MatchResult>(
 interface MatchResult {
   url: string;
   commit?: string;
+  [key: string]: string | string[] | undefined;
 }
 
 export const fromUrl: PkgOptionsParserPlugin<
   unknown,
   PkgUrlAndCommitOptions
-> = (requestUrl, query) => {
-  const res = matchFromUrl(requestUrl);
+> = (_requestUrl, query) => {
+  const res = matchFromUrl(_requestUrl);
   if (!res) {
     throw new UrlInvalidError();
   } else {

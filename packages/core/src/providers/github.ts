@@ -2,7 +2,7 @@
  * GitHub Provider Implementation
  */
 
-import { BaseProvider, RepositoryInfo, ProviderConfig } from './base';
+import { BaseProvider, RepositoryInfo } from './base';
 
 export class GitHubProvider extends BaseProvider {
   readonly platformName = 'github';

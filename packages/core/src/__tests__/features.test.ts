@@ -268,7 +268,7 @@ describe('GitPkg v2 Features', () => {
     });
 
     it('should support legacy API', () => {
-      const legacyApi = { install: (url: string) => Promise.resolve() };
+      const legacyApi = { install: (_url: string) => Promise.resolve() };
       expect(typeof legacyApi.install).toBe('function');
     });
   });

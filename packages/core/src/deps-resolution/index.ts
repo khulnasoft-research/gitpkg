@@ -225,7 +225,7 @@ export class DependencyGraphAnalyzer {
   static findVersionConflicts(graph: DependencyGraph): Map<string, Set<string>> {
     const conflicts = new Map<string, Set<string>>();
 
-    for (const [pkg, version] of graph.versions) {
+    for (const [pkg, _version] of graph.versions) {
       const dependents = new Set<string>();
       for (const [dependent, deps] of graph.dependencies) {
         if (deps.has(pkg)) {

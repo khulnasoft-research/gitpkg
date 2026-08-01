@@ -17,7 +17,7 @@
     "lint:fix": "eslint . --fix",
     "test": "lerna run test",
     "build": "lerna run build",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "pnpm install",
     "clean": "lerna run clean && rimraf node_modules dist coverage",
     "typecheck": "lerna run typecheck"
   },
@@ -30,7 +30,7 @@
     "@babel/preset-typescript": "^7.25.2",
     "@babel/register": "^7.25.0",
     "@eslint/js": "^9.0.0",
-    "@gitpkg/common": "*",
+    "@gitpkg/common": "workspace:*",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
@@ -50,7 +50,7 @@
     "typescript-eslint": "^8.0.0"
   },
   "dependencies": {
-    "@gitpkg/core": "^1.0.0-alpha"
+    "@gitpkg/core": "workspace:*"
   },
   "husky": {
     "hooks": {

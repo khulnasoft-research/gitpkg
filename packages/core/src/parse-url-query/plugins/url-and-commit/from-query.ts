@@ -6,7 +6,7 @@ import { parseCommitIshInfo } from "./commit-ish";
 export const fromQuery: PkgOptionsParserPlugin<
   unknown,
   PkgUrlAndCommitOptions
-> = (requestUrl, query) => {
+> = (_requestUrl, query) => {
   const { url, commit } = query;
   if (typeof url !== "string") {
     throw new QueryParamsInvalidError("url");

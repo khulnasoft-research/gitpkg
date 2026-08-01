@@ -10,7 +10,7 @@ export interface RepositoryInfo {
   ref: string; // branch, tag, or commit
   path: string; // subdirectory path
   apiUrl?: string;
-  raw Url?: string;
+  rawUrl?: string;
 }
 
 export interface ProviderConfig {
@@ -84,7 +84,7 @@ export abstract class BaseProvider {
  * Provider factory for creating provider instances
  */
 export class ProviderFactory {
-  private static providers = new Map<string, typeof BaseProvider>();
+  private static providers = new Map<string, new (config: ProviderConfig) => BaseProvider>();
 
   static {
     // Providers will be registered during initialization
@@ -93,14 +93,14 @@ export class ProviderFactory {
   /**
    * Register a provider
    */
-  static register(name: string, provider: typeof BaseProvider): void {
+  static register(name: string, provider: new (config: ProviderConfig) => BaseProvider): void {
     this.providers.set(name.toLowerCase(), provider);
   }
 
   /**
    * Get a provider by name
    */
-  static getProvider(name: string): typeof BaseProvider | undefined {
+  static getProvider(name: string): (new (config: ProviderConfig) => BaseProvider) | undefined {
     return this.providers.get(name.toLowerCase());
   }
 
@@ -112,7 +112,7 @@ export class ProviderFactory {
     if (!Provider) {
       throw new Error(`Unknown provider: ${name}`);
     }
-    return new Provider(config);
+    return new Provider(config ?? {});
   }
 
   /**

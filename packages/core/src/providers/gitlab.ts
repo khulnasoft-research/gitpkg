@@ -3,7 +3,7 @@
  * Supports both gitlab.com and self-hosted GitLab instances
  */
 
-import { BaseProvider, RepositoryInfo, ProviderConfig } from './base';
+import { BaseProvider, RepositoryInfo } from './base';
 
 export class GitLabProvider extends BaseProvider {
   readonly platformName = 'gitlab';

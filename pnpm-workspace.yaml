@@ -1,0 +1,10 @@
+packages:
+  - 'docs/.vuepress'
+  - 'tools/*'
+  - 'packages/*'
+allowBuilds:
+  core-js: false
+  esbuild: false
+  highlight.js: false
+  nx: false
+  vuepress: false
