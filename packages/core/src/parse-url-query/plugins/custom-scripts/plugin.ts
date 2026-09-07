@@ -14,7 +14,7 @@ export interface PkgCustomScriptsOptions {
 export const customScriptsPlugin: PkgOptionsParserPlugin<
   PkgUrlAndCommitOptions,
   PkgCustomScriptsOptions
-> = (requestUrl, query, previousOptions) => {
+> = (_requestUrl, query, previousOptions) => {
   return {
     customScripts: Reflect.ownKeys(query)
       .map(k => {

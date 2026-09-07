@@ -104,7 +104,7 @@ export class RepositoryAnalyzer {
    */
   static findPackages(
     files: Map<string, Record<string, unknown>>,
-    workspacePatterns?: string[]
+    _workspacePatterns?: string[]
   ): PackageInfo[] {
     const packages: PackageInfo[] = [];
 

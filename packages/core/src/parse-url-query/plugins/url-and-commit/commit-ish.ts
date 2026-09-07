@@ -6,6 +6,7 @@ interface CommitIshInfoMatchResult {
   user: string;
   repo: string;
   subdirs?: string[];
+  [key: string]: string | string[] | undefined;
 }
 const matchCommitIshInfo = match<CommitIshInfoMatchResult>(
   ":user/:repo/:subdirs*(/)?",

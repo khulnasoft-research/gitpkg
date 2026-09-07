@@ -90,7 +90,7 @@ export class BitbucketProvider extends BaseProvider {
     try {
       const response = await fetch(url, { headers });
       if (response.ok) {
-        const data = (await response.json()) as { links?: { [key: string]: unknown } };
+        (await response.json()) as { links?: { [key: string]: unknown } };
         return 'master'; // Bitbucket Server default
       }
     } catch {

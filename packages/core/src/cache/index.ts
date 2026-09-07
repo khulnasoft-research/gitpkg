@@ -34,7 +34,7 @@ export class LRUCache<K, V> {
   set(key: K, value: V, ttl?: number, hash?: string): void {
     // Remove oldest entry if at max size
     if (this.cache.size >= this.maxSize && !this.cache.has(key)) {
-      const firstKey = this.cache.keys().next().value;
+      const firstKey = this.cache.keys().next().value as K;
       this.cache.delete(firstKey);
     }
 

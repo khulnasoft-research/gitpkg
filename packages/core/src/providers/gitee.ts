@@ -3,7 +3,7 @@
  * Chinese Git repository platform
  */
 
-import { BaseProvider, RepositoryInfo, ProviderConfig } from './base';
+import { BaseProvider, RepositoryInfo } from './base';
 
 export class GiteeProvider extends BaseProvider {
   readonly platformName = 'gitee';

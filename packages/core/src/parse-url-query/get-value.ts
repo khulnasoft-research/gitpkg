@@ -17,8 +17,10 @@ export function getValueOfQuery(
       if (v.length === 0) return undefined;
       if (v[0] === commitFromUrl) {
         if (v.length === 1) return undefined;
-        else v.slice(1);
+        else return v.slice(1);
       }
+      return v;
     }
   } else return v;
+  return undefined;
 }
